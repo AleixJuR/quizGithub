@@ -55,7 +55,57 @@
 
         public static void Topic1()
         {
-            Console.WriteLine("");
+            ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E,ConsoleKey.B,ConsoleKey.A};
+            string[] preguntes = {
+                "Pregunta1",
+                "Pregunta2",
+                "Pregunta3",
+                "Pregunta4",
+                "Pregunta5"
+            };
+            string[,] respostes = {
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4"},
+            };
+            bool validAnswer = false;
+            int encerts = 0;
+            
+            for (int i = 0; i < correctes.Length; i++)
+            {
+                while (!validAnswer)
+                {
+                    try
+                    {
+                        Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
+                        for (int y = 0; i<respostes.GetLength(1); i++)
+                        {
+                            Console.WriteLine(Console.WriteLine(respostes[i,y]) );
+                        }
+                        resposta = Console.ReadKey();
+                        Console.Clear();
+                        if (resposta.Key != ConsoleKey.A && resposta.Key != ConsoleKey.B && resposta.Key != ConsoleKey.C && resposta.Key != ConsoleKey.D)
+                            throw new Exception("Invalid Option");
+
+                        validAnswer = true;
+
+                        if (resposta.Key == correctes[i])
+                            {
+                                encerts++;
+                                Console.WriteLine($"Correct, you have {encerts} correct answers");
+                            }
+
+                        else Console.WriteLine("Incorrect Answer");
+                        
+                    }
+                    catch (Exception e) { Console.WriteLine(e.Message); }
+                }
+                validAnswer = false;
+            }
+            Console.WriteLine("You have finised the test with 5 correct answers")
             MsgNextScreen("Press a key to go to the main menu");
         }
 
