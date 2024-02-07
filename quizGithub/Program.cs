@@ -55,6 +55,7 @@
 
         public static void Topic1()
         {
+            Console.WriteLine("");
             MsgNextScreen("Press a key to go to the main menu");
         }
 
