@@ -113,7 +113,7 @@
         public static void Topic2()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
-            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E, ConsoleKey.B, ConsoleKey.A };
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.B, ConsoleKey.B, ConsoleKey.B, ConsoleKey.A };
             string[] preguntes = {
                 "What is the chemical symbol for water?",
                 "Who proposed the theory of relativity?",
