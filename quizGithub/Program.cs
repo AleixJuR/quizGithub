@@ -17,10 +17,10 @@
                         World_History();
                         break;
                     case ConsoleKey.D2:
-                        Topic2();
+                        Science();
                         break;
                     case ConsoleKey.D3:
-                        Topic3();
+                        Literature();
                         break;
                     case ConsoleKey.D4:
                         Topic4();
@@ -46,8 +46,8 @@
         public static void ShowOptions()
         {
             Console.WriteLine("1 --  World History");
-            Console.WriteLine("2 -- Topic2");
-            Console.WriteLine("3 -- Topic3");
+            Console.WriteLine("2 -- Science");
+            Console.WriteLine("3 -- Literature");
             Console.WriteLine("4 -- Topic4");
             Console.WriteLine("5 -- Topic5");
             Console.WriteLine("6 -- Topic6");
@@ -110,7 +110,7 @@
             MsgNextScreen("Press any key to go to the main menu");
         }
 
-        public static void Topic2()
+        public static void Science()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
             ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.B, ConsoleKey.B, ConsoleKey.B, ConsoleKey.A };
@@ -166,23 +166,23 @@
             MsgNextScreen("Press any key to go to the main menu");
         }
 
-        public static void Topic3()
+        public static void Literature()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
-            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E, ConsoleKey.B, ConsoleKey.A };
+            ConsoleKey[] correctes = { ConsoleKey.B, ConsoleKey.D, ConsoleKey.B, ConsoleKey.A, ConsoleKey.C };
             string[] preguntes = {
-                "Pregunta1",
-                "Pregunta2",
-                "Pregunta3",
-                "Pregunta4",
-                "Pregunta5"
+                "Who wrote \"To Kill a Mockingbird\"?",
+                "Which Shakespeare play features the characters Romeo and Juliet?",
+                "What is the famous opening line of Charles Dickens' \"A Tale of Two Cities\"?",
+                "Who wrote the novel \"1984\"?",
+                "Which ancient epic poem tells the story of the Trojan War?"
             };
             string[,] respostes = {
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4"},
+                { "A) Mark Twain", "B) Harper Lee", "C) F. Scott Fitzgerald", "D) J.D. Salinger" },
+                { "A) Macbeth", "B) Hamlet", "C) Othello", "D) Romeo and Juliet" },
+                { "A) \"Call me Ishmael.\"", "B) \"It was the best of times, it was the worst of times.\"", "C) \"All happy families are alike; each unhappy family is unhappy in its own way.\"", "D) \"Happy families are all alike; every unhappy family is unhappy in its own way.\"" },
+                { "A) George Orwell", "B) Aldous Huxley", "C) Ray Bradbury", "D) Ernest Hemingway" },
+                { "A) The Aeneid", "B) The Odyssey", "C) The Iliad", "D) The Epic of Gilgamesh"},
             };
             bool validAnswer = false;
             int encerts = 0;
@@ -193,7 +193,7 @@
                 {
                     try
                     {
-                        Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
+                        Console.WriteLine($"Question {i + 1} --> {preguntes[i]}");
                         for (int y = 0; y < respostes.GetLength(1); y++)
                         {
                             Console.WriteLine(respostes[i, y]);
@@ -219,7 +219,7 @@
                 validAnswer = false;
             }
             Console.WriteLine($"You have finised the test with {encerts} correct answers");
-            MsgNextScreen("Press a key to go to the main menu");
+            MsgNextScreen("Press any key to go to the main menu");
         }
 
         public static void Topic4()
