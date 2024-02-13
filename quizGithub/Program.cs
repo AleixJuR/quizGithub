@@ -82,8 +82,8 @@
                     {
                         Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
                         for (int y = 0; i<respostes.GetLength(1); i++)
-                        {
-                            Console.WriteLine(Console.WriteLine(respostes[i,y]) );
+                        { 
+                            Console.WriteLine(respostes[i,y]);
                         }
                         resposta = Console.ReadKey();
                         Console.Clear();
@@ -105,7 +105,7 @@
                 }
                 validAnswer = false;
             }
-            Console.WriteLine("You have finised the test with 5 correct answers")
+            Console.WriteLine($"You have finised the test with {encerts} correct answers");
             MsgNextScreen("Press a key to go to the main menu");
         }
 
