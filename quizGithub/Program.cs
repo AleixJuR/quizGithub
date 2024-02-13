@@ -14,7 +14,7 @@
                 switch (tecla.Key)
                 {
                     case ConsoleKey.D1:
-                        Topic1();
+                        World_History();
                         break;
                     case ConsoleKey.D2:
                         Topic2();
@@ -44,7 +44,7 @@
 
         public static void ShowOptions()
         {
-            Console.WriteLine("1 -- Topic1");
+            Console.WriteLine("1 --  World History");
             Console.WriteLine("2 -- Topic2");
             Console.WriteLine("3 -- Topic3");
             Console.WriteLine("4 -- Topic4");
@@ -53,23 +53,23 @@
             Console.WriteLine("0 -- Exit");
         }
 
-        public static void Topic1()
+        public static void World_History()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
             ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E,ConsoleKey.B,ConsoleKey.A};
             string[] preguntes = {
-                "Pregunta1",
-                "Pregunta2",
-                "Pregunta3",
-                "Pregunta4",
-                "Pregunta5"
+                "1 - What year did World War I begin?",
+                "2 - Who was the first female Prime Minister of the United Kingdom?",
+                "3 - Which civilization built the famous Machu Picchu?",
+                "4 - Who was the first President of the United States?",
+                "5 - Which city was the capital of the Byzantine Empire?"
             };
             string[,] respostes = {
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4"},
+                { "A) 1914", "B) 1916", "C) 1918", "D) 1920" },
+                { "A) Margaret Thatcher", "B) Angela Merkel", "C) Theresa May", "D) Indira Gandhi" },
+                { "A) Aztecs", "B) Incas", "C) Mayans", "D) Egyptians" },
+                { "A) Thomas Jefferson", "B) George Washington", "C) John Adams", "D) Abraham Lincoln" },
+                { "A) Rome", "B) Athens", "C) Constantinople", "D) Alexandria"},
             };
             bool validAnswer = false;
             int encerts = 0;
@@ -111,11 +111,113 @@
 
         public static void Topic2()
         {
+            ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E, ConsoleKey.B, ConsoleKey.A };
+            string[] preguntes = {
+                "Pregunta1",
+                "Pregunta2",
+                "Pregunta3",
+                "Pregunta4",
+                "Pregunta5"
+            };
+            string[,] respostes = {
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4"},
+            };
+            bool validAnswer = false;
+            int encerts = 0;
+
+            for (int i = 0; i < correctes.Length; i++)
+            {
+                while (!validAnswer)
+                {
+                    try
+                    {
+                        Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
+                        for (int y = 0; y < respostes.GetLength(1); y++)
+                        {
+                            Console.WriteLine(respostes[i, y]);
+                        }
+                        resposta = Console.ReadKey();
+                        Console.Clear();
+                        if (resposta.Key != ConsoleKey.A && resposta.Key != ConsoleKey.B && resposta.Key != ConsoleKey.C && resposta.Key != ConsoleKey.D)
+                            throw new Exception("Invalid Option");
+
+                        validAnswer = true;
+
+                        if (resposta.Key == correctes[i])
+                        {
+                            encerts++;
+                            Console.WriteLine($"Correct, you have {encerts} correct answers");
+                        }
+
+                        else Console.WriteLine("Incorrect Answer");
+
+                    }
+                    catch (Exception e) { Console.WriteLine(e.Message); }
+                }
+                validAnswer = false;
+            }
+            Console.WriteLine($"You have finised the test with {encerts} correct answers");
             MsgNextScreen("Press a key to go to the main menu");
         }
 
         public static void Topic3()
         {
+            ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E, ConsoleKey.B, ConsoleKey.A };
+            string[] preguntes = {
+                "Pregunta1",
+                "Pregunta2",
+                "Pregunta3",
+                "Pregunta4",
+                "Pregunta5"
+            };
+            string[,] respostes = {
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4" },
+                { "resposta1", "resposta2", "resposta3", "resposta4"},
+            };
+            bool validAnswer = false;
+            int encerts = 0;
+
+            for (int i = 0; i < correctes.Length; i++)
+            {
+                while (!validAnswer)
+                {
+                    try
+                    {
+                        Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
+                        for (int y = 0; y < respostes.GetLength(1); y++)
+                        {
+                            Console.WriteLine(respostes[i, y]);
+                        }
+                        resposta = Console.ReadKey();
+                        Console.Clear();
+                        if (resposta.Key != ConsoleKey.A && resposta.Key != ConsoleKey.B && resposta.Key != ConsoleKey.C && resposta.Key != ConsoleKey.D)
+                            throw new Exception("Invalid Option");
+
+                        validAnswer = true;
+
+                        if (resposta.Key == correctes[i])
+                        {
+                            encerts++;
+                            Console.WriteLine($"Correct, you have {encerts} correct answers");
+                        }
+
+                        else Console.WriteLine("Incorrect Answer");
+
+                    }
+                    catch (Exception e) { Console.WriteLine(e.Message); }
+                }
+                validAnswer = false;
+            }
+            Console.WriteLine($"You have finised the test with {encerts} correct answers");
             MsgNextScreen("Press a key to go to the main menu");
         }
 
