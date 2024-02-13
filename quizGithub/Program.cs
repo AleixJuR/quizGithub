@@ -81,7 +81,7 @@
                     try
                     {
                         Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
-                        for (int y = 0; i<respostes.GetLength(1); i++)
+                        for (int y = 0; y<respostes.GetLength(1); y++)
                         { 
                             Console.WriteLine(respostes[i,y]);
                         }
