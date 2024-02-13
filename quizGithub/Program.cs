@@ -31,7 +31,8 @@
                     case ConsoleKey.D6:
                         Topic6();
                         break;
-
+                    case ConsoleKey.D0:
+                        break;
                     default:
                         MsgNextScreen("ERROR. Press a key to go to the main meu");
                         break;
@@ -56,13 +57,13 @@
         public static void World_History()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
-            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E,ConsoleKey.B,ConsoleKey.A};
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.A, ConsoleKey.B,ConsoleKey.B,ConsoleKey.C};
             string[] preguntes = {
-                "1 - What year did World War I begin?",
-                "2 - Who was the first female Prime Minister of the United Kingdom?",
-                "3 - Which civilization built the famous Machu Picchu?",
-                "4 - Who was the first President of the United States?",
-                "5 - Which city was the capital of the Byzantine Empire?"
+                "What year did World War I begin?",
+                "Who was the first female Prime Minister of the United Kingdom?",
+                "Which civilization built the famous Machu Picchu?",
+                "Who was the first President of the United States?",
+                "Which city was the capital of the Byzantine Empire?"
             };
             string[,] respostes = {
                 { "A) 1914", "B) 1916", "C) 1918", "D) 1920" },
@@ -80,7 +81,7 @@
                 {
                     try
                     {
-                        Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
+                        Console.WriteLine($"Question {i + 1} --> {preguntes[i]}");
                         for (int y = 0; y<respostes.GetLength(1); y++)
                         { 
                             Console.WriteLine(respostes[i,y]);
@@ -106,7 +107,7 @@
                 validAnswer = false;
             }
             Console.WriteLine($"You have finised the test with {encerts} correct answers");
-            MsgNextScreen("Press a key to go to the main menu");
+            MsgNextScreen("Press any key to go to the main menu");
         }
 
         public static void Topic2()
@@ -114,18 +115,18 @@
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
             ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E, ConsoleKey.B, ConsoleKey.A };
             string[] preguntes = {
-                "Pregunta1",
-                "Pregunta2",
-                "Pregunta3",
-                "Pregunta4",
-                "Pregunta5"
+                "What is the chemical symbol for water?",
+                "Who proposed the theory of relativity?",
+                "What is the smallest bone in the human body?",
+                "Which planet is known as the \"Red Planet\"?",
+                "What is the process by which plants make their own food called?"
             };
             string[,] respostes = {
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4"},
+                { "A) H2O", "B) CO2", "C) O2", "D) NaCl" },
+                { "A) Isaac Newton", "B) Albert Einstein", "C) Galileo Galilei", "D) Nikola Tesla" },
+                { "A) Femur", "B) Stapes", "C) Tibia", "D) Ulna" },
+                { "A) Venus", "B) Mars", "C) Jupiter", "D) Saturn" },
+                { "A) Photosynthesis", "B) Respiration", "C) Fermentation", "D) Decomposition"},
             };
             bool validAnswer = false;
             int encerts = 0;
@@ -136,7 +137,7 @@
                 {
                     try
                     {
-                        Console.WriteLine($"Pregunta {i + 1} --> {preguntes[i]}");
+                        Console.WriteLine($"Question {i + 1} --> {preguntes[i]}");
                         for (int y = 0; y < respostes.GetLength(1); y++)
                         {
                             Console.WriteLine(respostes[i, y]);
@@ -162,7 +163,7 @@
                 validAnswer = false;
             }
             Console.WriteLine($"You have finised the test with {encerts} correct answers");
-            MsgNextScreen("Press a key to go to the main menu");
+            MsgNextScreen("Press any key to go to the main menu");
         }
 
         public static void Topic3()
