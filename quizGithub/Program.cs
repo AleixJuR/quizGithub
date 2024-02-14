@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //Here is were all is shown
         {
             ConsoleKeyInfo tecla;
             do
