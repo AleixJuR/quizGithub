@@ -11,9 +11,9 @@
                 ShowOptions();
                 tecla = Console.ReadKey();
                 Console.Clear();
-                switch (tecla.Key)
+                switch (tecla.Key) //This switch will choose the action with the topic we want
                 {
-                    case ConsoleKey.D1:
+                    case ConsoleKey.D1: 
                         World_History();
                         break;
                     case ConsoleKey.D2:
@@ -39,10 +39,12 @@
 
                 }
 
-            } while (tecla.Key != ConsoleKey.D0);
+            } while (tecla.Key != ConsoleKey.D0); //When the user press 0 the program will stop
             
         }
-
+        /// <summary>
+        /// This action show on screen all the topics
+        /// </summary>
         public static void ShowOptions()
         {
             Console.WriteLine("1 --  World History");
@@ -53,19 +55,19 @@
             Console.WriteLine("6 -- Topic6");
             Console.WriteLine("0 -- Exit");
         }
-
+        
         public static void World_History()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
-            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.A, ConsoleKey.B,ConsoleKey.B,ConsoleKey.C};
-            string[] preguntes = {
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.A, ConsoleKey.B,ConsoleKey.B,ConsoleKey.C}; //This variable saves the correct answers
+            string[] preguntes = { //This array saves the questions
                 "What year did World War I begin?",
                 "Who was the first female Prime Minister of the United Kingdom?",
                 "Which civilization built the famous Machu Picchu?",
                 "Who was the first President of the United States?",
                 "Which city was the capital of the Byzantine Empire?"
             };
-            string[,] respostes = {
+            string[,] respostes = { //This matrix saves all the answers
                 { "A) 1914", "B) 1916", "C) 1918", "D) 1920" },
                 { "A) Margaret Thatcher", "B) Angela Merkel", "C) Theresa May", "D) Indira Gandhi" },
                 { "A) Aztecs", "B) Incas", "C) Mayans", "D) Egyptians" },
@@ -81,21 +83,21 @@
                 {
                     try
                     {
-                        Console.WriteLine($"Question {i + 1} --> {preguntes[i]}");
+                        Console.WriteLine($"Question {i + 1} --> {preguntes[i]}"); //Here it prints the questions
                         for (int y = 0; y<respostes.GetLength(1); y++)
                         { 
-                            Console.WriteLine(respostes[i,y]);
+                            Console.WriteLine(respostes[i,y]); //Here it prints the 4 possible answers
                         }
-                        resposta = Console.ReadKey();
+                        resposta = Console.ReadKey(); //
                         Console.Clear();
                         if (resposta.Key != ConsoleKey.A && resposta.Key != ConsoleKey.B && resposta.Key != ConsoleKey.C && resposta.Key != ConsoleKey.D)
-                            throw new Exception("Invalid Option");
+                            throw new Exception("Invalid Option"); //While we not press A/B/C/D the program will ask again
 
                         validAnswer = true;
 
                         if (resposta.Key == correctes[i])
                             {
-                                encerts++;
+                                encerts++; //If we have a correct answer, it will sum 1 
                                 Console.WriteLine($"Correct, you have {encerts} correct answers");
                             }
 
@@ -237,6 +239,10 @@
             MsgNextScreen("Press a key to go to the main menu");
         }
 
+        /// <summary>
+        /// It shows a message and ask for pressing a key
+        /// </summary>
+        /// <param name="msg">The message it print</param>
         public static void MsgNextScreen(string msg)
         {
             Console.WriteLine(msg);
