@@ -23,13 +23,13 @@
                         Topic3();
                         break;
                     case ConsoleKey.D4:
-                        Topic4();
+                        Geography();
                         break;
                     case ConsoleKey.D5:
-                        Topic5();
+                        Technology();
                         break;
                     case ConsoleKey.D6:
-                        Topic6();
+                        Famous_Personalities();
                         break;
 
                     default:
@@ -113,6 +113,7 @@
                             Console.WriteLine($"Correct, you have {encerts} correct answers");
                         }
 
+
                         else Console.WriteLine("Incorrect Answer");
 
                     }
@@ -124,23 +125,23 @@
             MsgNextScreen("Press any key to go to the main menu");
         }
 
-        public static void Technology()
+        public static void Technology() 
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
             ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.A, ConsoleKey.B, ConsoleKey.B, ConsoleKey.C };
-            string[] preguntes = {
+            string[] preguntes = { // These are the questions which are gonna be seen by the user
                 "Who is the CEO of Tesla, Inc.?",
                 "What does CPU stand for in computing?",
                 "Which company developed the Windows operating system?",
                 "What is the programming language used to develop Android apps?",
                 "Which social media platform was founded by Mark Zuckerberg?"
             };
-            string[,] respostes = {
-                { "A) Beijing", "B) Tokyo", "C) Seoul", "D) Bangkok" },
-                { "A) Beijing", "B) Tokyo", "C) Seoul", "D) Bangkok" },
-                { "A) Beijing", "B) Tokyo", "C) Seoul", "D) Bangkok" },
-                { "A) Beijing", "B) Tokyo", "C) Seoul", "D) Bangkok" },
-                { "A) Beijing", "B) Tokyo", "C) Seoul", "D) Bangkok" },
+            string[,] respostes = { //These are the possible answers
+                { "A) Elon Musk", "B) Jeff Bezos", "C) Tim Cook", "D) Sundar Pichai" },
+                { "A) Central processing unit", "B) Computer processing unit", "C) Central power unit", "D) Computer power unit" },
+                { "A) Apple Inc.", "B) Microsoft corporation", "C) Google LLC", "D) IBM" },
+                { "A) Swift", "B) Java", "C) C#", "D) Python" },
+                { "A) Twitter", "B) Instagram", "C) Facebook", "D) Snapchat" },
             };
             bool validAnswer = false;
             int encerts = 0;
@@ -184,23 +185,23 @@
         public static void Famous_Personalities()
         {
             ConsoleKeyInfo resposta = default(ConsoleKeyInfo);
-            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.D, ConsoleKey.E, ConsoleKey.B, ConsoleKey.A };
+            ConsoleKey[] correctes = { ConsoleKey.A, ConsoleKey.A, ConsoleKey.A, ConsoleKey.A, ConsoleKey.A };
             string[] preguntes = {
-                "Pregunta1",
-                "Pregunta2",
-                "Pregunta3",
-                "Pregunta4",
-                "Pregunta5"
+                "Who was the first woman to win a Nobel Prize?",
+                "Who painted the famous artwork \"The Starry Night\"?",
+                "Which scientist is credited with the theory of evolution by natural selection?",
+                "Who was the first man to walk on the moon?",
+                "Which famous physicist developed the theory of relativity?"
             };
             string[,] respostes = {
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4" },
-                { "resposta1", "resposta2", "resposta3", "resposta4"},
+                { "A) Marie Curie", "B) Mother Teresa", "C) Amelia Earhart", "D) Florance Nightingale" },
+                { "A) Vincent Van Gogh", "B) Pablo Picasso", "C) Leonardo da Vinci", "D) Claude Monet" },
+                { "A) Charles Darwin", "B) Isaac Newton", "C) Galileo Galilei", "D) Albert Einstein" },
+                { "A) Neil Armstrong", "B) Buzz Aldrin", "C) Yuri Gagarin", "D) Alan Shepard" },
+                { "A) Albert Einstein", "B) Isaac Newton", "C) Nikola Tesla", "D)Stephen Hawking"},
             };
             bool validAnswer = false;
-            int encerts = 0;
+            int encerts = 0; // Conta tot els encerts, els que t'has equivocat no!
 
             for (int i = 0; i < correctes.Length; i++)
             {
